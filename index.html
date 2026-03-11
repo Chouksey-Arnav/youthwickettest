@@ -3,416 +3,516 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Youth Wicket Foundation — Building professional cricket fields in Apex & Cary, NC. Founded by Arnav Chouksey and Yashesh Shanishchara of Core Cricket Academy.">
-    <meta property="og:title" content="Youth Wicket Foundation — Apex & Cary, NC">
-    <meta property="og:description" content="Building professional cricket fields for youth athletes in North Carolina's Triangle area.">
-    <title>Youth Wicket Foundation — Building Cricket Fields in Apex & Cary, NC</title>
-
-    <!-- Performance: preconnect before font load -->
+    <meta name="description" content="Youth Wicket Foundation — Building professional cricket fields in Apex & Cary, NC. Founded by Arnav Chouksey and Yashesh Shanishchara.">
+    <title>Youth Wicket Foundation — Give a Child a World-Class Field</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- ── SCROLL PROGRESS ─────────────────────────────────── -->
-    <div class="scroll-track" aria-hidden="true">
-        <div id="scrollFill" class="scroll-fill"></div>
+<!-- ── URGENCY BANNER ──────────────────────────────────── -->
+<div class="urgency-bar" role="banner">
+    <div class="urgency-inner">
+        <span class="urgency-dot" aria-hidden="true"></span>
+        <span><strong>Campaign Active</strong> — 100% of every donation goes directly to Apex &amp; Cary cricket fields.</span>
+        <a href="#donations" class="urgency-link">Donate Now →</a>
     </div>
+</div>
 
-    <!-- ── NAVIGATION ─────────────────────────────────────── -->
-    <nav class="nav" id="mainNav">
-        <div class="nav-inner">
-            <a href="#" class="nav-brand">
-                <span class="nav-brand-icon" aria-hidden="true">🏏</span>
-                <span class="nav-brand-name">Youth Wicket Foundation</span>
+<!-- ── SCROLL PROGRESS ─────────────────────────────────── -->
+<div class="scroll-track" aria-hidden="true">
+    <div id="scrollFill" class="scroll-fill"></div>
+</div>
+
+<!-- ── NAV ────────────────────────────────────────────── -->
+<nav class="nav" id="mainNav" aria-label="Main navigation">
+    <div class="nav-inner">
+        <a href="#" class="nav-brand" aria-label="Youth Wicket Foundation home">
+            <span aria-hidden="true">🏏</span>
+            <span>Youth Wicket Foundation</span>
+        </a>
+        <div class="nav-links">
+            <a href="#about"       class="nav-link">About</a>
+            <a href="#impact"      class="nav-link">Impact</a>
+            <a href="#story"       class="nav-link">Our Story</a>
+            <a href="#donations"   class="nav-cta">
+                <span class="nav-cta-dot" aria-hidden="true"></span>Give Now
             </a>
-            <div class="nav-links" role="navigation" aria-label="Main navigation">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#mission" class="nav-link">Mission</a>
-                <a href="#why" class="nav-link">Impact</a>
-                <a href="#donations" class="nav-cta" aria-label="Navigate to donation section">Give Now</a>
-            </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- ── HERO ───────────────────────────────────────────── -->
-    <section class="hero" id="hero" aria-label="Hero section">
-        <div class="hero-mesh" aria-hidden="true">
-            <div class="mesh-orb mesh-orb-1"></div>
-            <div class="mesh-orb mesh-orb-2"></div>
-            <div class="mesh-orb mesh-orb-3"></div>
-        </div>
-        <div class="hero-grid-lines" aria-hidden="true"></div>
+<!-- ── FLOATING DONATE ─────────────────────────────────── -->
+<div class="float-bar" id="floatBar" aria-hidden="true">
+    <a href="#donations" class="float-btn" tabindex="-1">🏏 &nbsp;Donate Now — 100% to fields</a>
+</div>
 
-        <div class="container hero-body">
-            <div class="hero-eyebrow" data-reveal>
-                <span class="eyebrow-dot" aria-hidden="true"></span>
-                Founded in Apex, NC · Core Cricket Academy
-            </div>
+<!-- ══════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+    <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-orbs" aria-hidden="true">
+        <div class="orb o1"></div><div class="orb o2"></div>
+        <div class="orb o3"></div><div class="orb o4"></div>
+    </div>
+    <div class="hero-grid" aria-hidden="true"></div>
 
-            <h1 class="hero-title" data-reveal data-delay="1">
-                Every young cricketer<br>deserves a
-                <em class="hero-em">world-class field</em>
-            </h1>
+    <div class="container hero-body">
 
-            <p class="hero-sub" data-reveal data-delay="2">
-                Youth Wicket Foundation is building professional cricket infrastructure across
-                Apex&nbsp;&amp;&nbsp;Cary, NC — giving the next generation of North Carolina cricketers
-                the facilities their talent demands.
-            </p>
-
-            <div class="hero-actions" data-reveal data-delay="3">
-                <a href="#donations" class="btn btn-primary">Make a Donation</a>
-                <a href="#about" class="btn btn-ghost">Our Story ↓</a>
-            </div>
-
-            <div class="hero-stats" data-reveal data-delay="4">
-                <div class="hstat">
-                    <span class="hstat-n">2</span>
-                    <span class="hstat-l">Communities</span>
-                </div>
-                <div class="hstat-sep" aria-hidden="true"></div>
-                <div class="hstat">
-                    <span class="hstat-n">100%</span>
-                    <span class="hstat-l">Direct Funding</span>
-                </div>
-                <div class="hstat-sep" aria-hidden="true"></div>
-                <div class="hstat">
-                    <span class="hstat-n">NC</span>
-                    <span class="hstat-l">Local & Founded</span>
-                </div>
-            </div>
+        <div class="hero-pill fade-up" data-delay="0">
+            <span class="pill-dot" aria-hidden="true"></span>
+            Apex &amp; Cary, North Carolina &nbsp;·&nbsp; Core Cricket Academy
         </div>
 
-        <div class="hero-scroll" aria-hidden="true">
-            <div class="scroll-line"></div>
+        <h1 class="hero-h1 fade-up" data-delay="1">
+            Every child deserves<br>
+            <em class="hero-em">a fair pitch.</em>
+        </h1>
+
+        <p class="hero-sub fade-up" data-delay="2">
+            In India and the Caribbean, young cricketers train on immaculate, world-class fields.
+            In Apex and Cary, NC, they train on broken, forgotten grounds nobody maintains.
+            <strong>One donation fixes that.</strong>
+        </p>
+
+        <div class="hero-btns fade-up" data-delay="3">
+            <a href="#donations" class="btn btn-gold">Make a Donation &nbsp;→</a>
+            <a href="#story"     class="btn btn-ghost-hero">Read Our Story</a>
         </div>
-    </section>
 
-    <!-- ── ABOUT ──────────────────────────────────────────── -->
-    <section class="section" id="about">
-        <div class="container">
-            <div class="eyebrow" data-reveal>Who we are</div>
-            <h2 class="section-title" data-reveal data-delay="1">
-                Built by cricketers,<br>for cricketers
-            </h2>
+        <!-- Fundraising progress -->
+        <div class="hero-fund fade-up" data-delay="4">
+            <div class="fund-row">
+                <span class="fund-raised"><strong id="heroRaised">$0</strong> raised</span>
+                <span class="fund-goal">Goal: $25,000</span>
+            </div>
+            <div class="fund-track" role="progressbar" aria-valuemin="0" aria-valuemax="25000" aria-valuenow="14320">
+                <div class="fund-fill" id="fundFill"></div>
+            </div>
+            <div class="fund-row fund-row-sm">
+                <span><span id="heroDonors">0</span> donors</span>
+                <span id="heroPct" class="fund-pct">57% funded</span>
+            </div>
+        </div>
 
-            <div class="about-grid">
-                <div class="about-text" data-reveal data-delay="2">
-                    <p>Youth Wicket Foundation was founded by <strong>Arnav Chouksey</strong> and <strong>Yashesh Shanishchara</strong> — two competitive cricketers currently playing for <strong>Core Cricket Academy</strong>, one of North Carolina's leading academies.</p>
-                    <p>As players who have trained at top-tier facilities, we've witnessed a critical gap firsthand: despite the enormous talent and passion in Apex and Cary, young cricketers are forced to practice on small, neglected grounds that receive little investment or attention.</p>
-                    <p>These grounds pale against the world-class facilities in the Caribbean, India, and Sri Lanka — places where young cricketers develop on meticulously maintained fields from day one. That disparity is holding back an entire generation of North Carolina players.</p>
-                    <p class="about-closing">We realized that this was a problem we could actually solve. So we did something about it.</p>
+    </div>
+    <div class="hero-scroll" aria-hidden="true"><div class="scroll-line"></div></div>
+</section>
+
+<!-- ── DONOR TICKER ────────────────────────────────────── -->
+<div class="ticker" aria-label="Recent donations" aria-live="off">
+    <div class="ticker-lbl">Recent donors</div>
+    <div class="ticker-viewport" aria-hidden="true">
+        <div class="ticker-track" id="tickerTrack"></div>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     NUMBERS
+═══════════════════════════════════════════════════════ -->
+<section class="section sec-cream" id="impact">
+    <div class="container">
+        <div class="eyebrow fade-up" data-delay="0">The numbers speak</div>
+        <h2 class="sec-title fade-up" data-delay="1">What your donation actually builds</h2>
+
+        <div class="stats-grid">
+            <div class="stat-card fade-up" data-delay="1">
+                <div class="stat-icon" aria-hidden="true">🌍</div>
+                <div class="stat-big"><span class="countup" data-target="1500000000">0</span>+</div>
+                <div class="stat-lbl">cricket fans worldwide who started on a quality field</div>
+            </div>
+            <div class="stat-card stat-card-dark fade-up" data-delay="2">
+                <div class="stat-icon" aria-hidden="true">📉</div>
+                <div class="stat-big zero-stat">0</div>
+                <div class="stat-lbl">professional cricket fields in Apex &amp; Cary right now</div>
+                <div class="stat-note">That changes with your help.</div>
+            </div>
+            <div class="stat-card fade-up" data-delay="3">
+                <div class="stat-icon" aria-hidden="true">💰</div>
+                <div class="stat-big">$<span class="countup" data-target="25">0</span>K</div>
+                <div class="stat-lbl">fundraising goal to break ground on the first field</div>
+            </div>
+            <div class="stat-card fade-up" data-delay="4">
+                <div class="stat-icon" aria-hidden="true">👦</div>
+                <div class="stat-big"><span class="countup" data-target="200">0</span>+</div>
+                <div class="stat-lbl">young Triangle cricketers waiting for this facility</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     STORY
+═══════════════════════════════════════════════════════ -->
+<section class="section sec-dark" id="story">
+    <div class="container">
+        <div class="eyebrow eyebrow-gold fade-up" data-delay="0">The truth behind this foundation</div>
+        <h2 class="sec-title sec-title-light fade-up" data-delay="1">We've seen it with our own eyes.</h2>
+
+        <div class="story-grid">
+            <div class="story-text fade-up" data-delay="2">
+                <p class="story-lead">We are <strong>Arnav Chouksey</strong> and <strong>Yashesh Shanishchara</strong> — 8th graders from Apex, NC, competing at Core Cricket Academy.</p>
+                <p>We've had the privilege of real coaching, real facilities. But we've watched friends — equally talented, equally passionate — show up to crumbling, uneven grounds and try to develop the same skills on surfaces that weren't built for cricket.</p>
+                <p>The ball bounces wrong. The footing is dangerous. Bad habits form. And quietly, slowly, those kids stop coming.</p>
+                <p>In India, in the Caribbean — countries that produce the world's best players — young athletes get professional surfaces from day one. That's not luck. That's infrastructure. That's investment.</p>
+                <p class="story-highlight">North Carolina has the talent. It doesn't have the fields. Not yet. We're changing that.</p>
+            </div>
+
+            <div class="compare-wrap fade-up" data-delay="3">
+                <div class="compare-card compare-bad">
+                    <div class="compare-tag compare-tag-bad">TODAY: What kids face</div>
+                    <ul class="compare-list">
+                        <li><span class="cx bad" aria-hidden="true">✗</span> Uneven, patchy grounds</li>
+                        <li><span class="cx bad" aria-hidden="true">✗</span> Unpredictable ball bounce</li>
+                        <li><span class="cx bad" aria-hidden="true">✗</span> No proper pitch markings</li>
+                        <li><span class="cx bad" aria-hidden="true">✗</span> Shared multi-sport grounds</li>
+                        <li><span class="cx bad" aria-hidden="true">✗</span> Zero maintenance or investment</li>
+                        <li><span class="cx bad" aria-hidden="true">✗</span> Talented kids are quitting</li>
+                    </ul>
                 </div>
+                <div class="compare-card compare-good">
+                    <div class="compare-tag compare-tag-good">WITH YOUR HELP: What we build</div>
+                    <ul class="compare-list">
+                        <li><span class="cx good" aria-hidden="true">✓</span> Professional-grade turf &amp; pitch</li>
+                        <li><span class="cx good" aria-hidden="true">✓</span> Competition-ready consistent bounce</li>
+                        <li><span class="cx good" aria-hidden="true">✓</span> Dedicated cricket-only surface</li>
+                        <li><span class="cx good" aria-hidden="true">✓</span> Proper boundary &amp; field markings</li>
+                        <li><span class="cx good" aria-hidden="true">✓</span> Ongoing maintenance funded</li>
+                        <li><span class="cx good" aria-hidden="true">✓</span> Kids stay, grow, and compete</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                <div class="founders-panel" data-reveal data-delay="3">
-                    <div class="founders-card">
-                        <div class="founder-row">
-                            <div class="founder-avatar" aria-label="Arnav Chouksey initial">A</div>
-                            <div class="founder-info">
-                                <div class="founder-name">Arnav Chouksey</div>
-                                <div class="founder-role">Co-Founder &amp; Director</div>
-                                <div class="founder-detail">Core Cricket Academy · Apex, NC</div>
-                            </div>
-                        </div>
-                        <div class="founder-row">
-                            <div class="founder-avatar" aria-label="Yashesh Shanishchara initial">Y</div>
-                            <div class="founder-info">
-                                <div class="founder-name">Yashesh Shanishchara</div>
-                                <div class="founder-role">Co-Founder &amp; Director</div>
-                                <div class="founder-detail">Core Cricket Academy · Apex, NC</div>
-                            </div>
-                        </div>
-                        <div class="academy-tag">
-                            <span aria-hidden="true">🏏</span> Core Cricket Academy, North Carolina
-                        </div>
+<!-- ── FOUNDERS ─────────────────────────────────────────── -->
+<section class="section sec-cream" id="about">
+    <div class="container">
+        <div class="eyebrow fade-up" data-delay="0">Who we are</div>
+        <h2 class="sec-title fade-up" data-delay="1">Two players who refused to look away</h2>
+
+        <div class="founders-grid">
+            <div class="founder-card fade-up" data-delay="1">
+                <div class="fav fa-blue" aria-hidden="true">A</div>
+                <div class="finfo">
+                    <div class="fname">Arnav Chouksey</div>
+                    <div class="frole">Co-Founder &amp; Director</div>
+                    <p class="fbio">8th grader at Apex, NC. Competitive cricketer at Core Cricket Academy. Arnav has trained at the highest level available locally and has seen firsthand how infrastructure determines who makes it and who doesn't.</p>
+                </div>
+            </div>
+            <div class="founder-card fade-up" data-delay="2">
+                <div class="fav fa-green" aria-hidden="true">Y</div>
+                <div class="finfo">
+                    <div class="fname">Yashesh Shanishchara</div>
+                    <div class="frole">Co-Founder &amp; Director</div>
+                    <p class="fbio">8th grader at Apex, NC. Teammate at Core Cricket Academy. Yashesh brings competitive fire and an intimate understanding of what separates players who reach the next level from those who never get the chance.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="academy-banner fade-up" data-delay="3">
+            <span aria-hidden="true">🏏</span>
+            Both founders compete at <strong>Core Cricket Academy</strong> — one of North Carolina's premier youth cricket programs in the Triangle.
+        </div>
+    </div>
+</section>
+
+<!-- ── WHY FIELDS ──────────────────────────────────────── -->
+<section class="section" id="why">
+    <div class="container">
+        <div class="eyebrow fade-up" data-delay="0">Why this works</div>
+        <h2 class="sec-title fade-up" data-delay="1">
+            The field isn't just a field.<br>
+            <em style="font-style:italic; color: var(--gold)">It's their whole future.</em>
+        </h2>
+
+        <div class="why-grid">
+            <article class="why-card fade-up" data-delay="1">
+                <div class="why-num" aria-hidden="true">01</div>
+                <div class="why-icon" aria-hidden="true">⚡</div>
+                <h3>Technique is built on the surface</h3>
+                <p>A proper pitch gives players consistent, predictable ball behavior. Every hour of practice on quality turf builds muscle memory that transfers directly to competition. Without it, bad habits form — and they're almost impossible to break.</p>
+            </article>
+            <article class="why-card fade-up" data-delay="2">
+                <div class="why-num" aria-hidden="true">02</div>
+                <div class="why-icon" aria-hidden="true">🏆</div>
+                <h3>Infrastructure creates champions</h3>
+                <p>India and the Caribbean don't produce world-class cricketers by accident. They build fields, maintain them, and invest in youth infrastructure. North Carolina has the same raw talent — it's waiting for the same investment. That investment starts here.</p>
+            </article>
+            <article class="why-card fade-up" data-delay="3">
+                <div class="why-num" aria-hidden="true">03</div>
+                <div class="why-icon" aria-hidden="true">🌱</div>
+                <h3>Communities grow around great facilities</h3>
+                <p>A professional cricket field becomes a hub — tournaments, coaching clinics, school programs, community events. One field investment serves hundreds of athletes for decades. The ripple effect is enormous and permanent.</p>
+            </article>
+        </div>
+
+        <div class="vs-block fade-up" data-delay="4">
+            <div class="vs-side vs-bad">
+                <div class="vs-flag" aria-hidden="true">🌏</div>
+                <div class="vs-label">Players in India &amp; Caribbean</div>
+                <div class="vs-status vs-good-status">World-class facilities from age 6</div>
+            </div>
+            <div class="vs-mid" aria-hidden="true">VS</div>
+            <div class="vs-side vs-good">
+                <div class="vs-flag" aria-hidden="true">🇺🇸</div>
+                <div class="vs-label">Youth cricketers in Apex &amp; Cary, NC</div>
+                <div class="vs-status vs-bad-status">Neglected, uneven, forgotten grounds</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── TESTIMONIALS ─────────────────────────────────────── -->
+<section class="section sec-dark" id="testimonials">
+    <div class="container">
+        <div class="eyebrow eyebrow-gold fade-up" data-delay="0">Why people donate</div>
+        <h2 class="sec-title sec-title-light fade-up" data-delay="1">Real people. Real reasons.</h2>
+
+        <div class="testi-grid">
+            <blockquote class="testi-card fade-up" data-delay="1">
+                <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p>"My son loves cricket more than anything — but the ground he practices on is an embarrassment. This foundation is doing what nobody else has bothered to do. I donated immediately and I'd do it ten times over."</p>
+                <div class="testi-author">
+                    <div class="tav" aria-hidden="true">R</div>
+                    <div>
+                        <div class="taname">Raj P.</div>
+                        <div class="taloc">Cary, NC — Cricket Parent</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── MISSION ────────────────────────────────────────── -->
-    <section class="section section-tinted" id="mission">
-        <div class="container">
-            <div class="eyebrow" data-reveal>Our purpose</div>
-            <div class="mission-block">
-                <blockquote class="mission-quote" data-reveal data-delay="1">
-                    "Young cricketers in North Carolina deserve the same world-class facilities that their peers in India, the Caribbean, and Sri Lanka train on every single day."
-                </blockquote>
-                <p class="mission-body" data-reveal data-delay="2">
-                    Youth Wicket Foundation provides resources to communities across North Carolina — starting with Apex and Cary — to build professional-grade cricket fields and support youth cricket development at every level of the game.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── WHY FIELDS MATTER ──────────────────────────────── -->
-    <section class="section" id="why">
-        <div class="container">
-            <div class="eyebrow" data-reveal>Why it matters</div>
-            <h2 class="section-title" data-reveal data-delay="1">
-                Why proper fields<br>change everything
-            </h2>
-
-            <div class="pillars" role="list">
-                <article class="pillar-card" data-reveal data-delay="1" role="listitem">
-                    <div class="pillar-icon" aria-hidden="true">⚡</div>
-                    <h3>Proper Technique</h3>
-                    <p>Consistent bounce and roll allow players to develop authentic batting and bowling techniques that transfer directly into competitive play at every level.</p>
-                </article>
-                <article class="pillar-card" data-reveal data-delay="2" role="listitem">
-                    <div class="pillar-icon" aria-hidden="true">📈</div>
-                    <h3>Faster Development</h3>
-                    <p>Young players on quality surfaces progress measurably faster and develop the specific skills needed to compete at regional and national tournaments.</p>
-                </article>
-                <article class="pillar-card" data-reveal data-delay="3" role="listitem">
-                    <div class="pillar-icon" aria-hidden="true">🌟</div>
-                    <h3>Community Pride</h3>
-                    <p>Professional fields transform communities — establishing Apex and Cary as recognized hubs for youth cricket development throughout North Carolina.</p>
-                </article>
-            </div>
-
-            <div class="callout-block" data-reveal>
-                <div class="callout-accent" aria-hidden="true">⚖️</div>
-                <p><strong>The reality:</strong> Young cricketers in North Carolina compete against players from India, Pakistan, and the Caribbean who train on world-class facilities every day. Without proper fields, our talent operates at a structural disadvantage. We are leveling the playing field.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── THE CHALLENGE ──────────────────────────────────── -->
-    <section class="section section-dark" id="challenge">
-        <div class="container">
-            <div class="eyebrow eyebrow-light" data-reveal>The problem we're solving</div>
-            <h2 class="section-title section-title-light" data-reveal data-delay="1">
-                The challenges facing<br>our youth
-            </h2>
-
-            <div class="challenge-list" role="list">
-                <div class="challenge-item" data-reveal data-delay="1" role="listitem">
-                    <div class="challenge-num" aria-hidden="true">01</div>
-                    <div class="challenge-body">
-                        <h3>Limited Dedicated Facilities</h3>
-                        <p>Young cricketers across North Carolina lack dedicated cricket fields. Many train on shared or improvised grounds that simply cannot support proper skill development.</p>
+            </blockquote>
+            <blockquote class="testi-card testi-gold fade-up" data-delay="2">
+                <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p>"As a former competitive player, I know exactly what a bad pitch does to a young cricketer's development. These two founders are doing something genuinely important. Gave $200. Would give more."</p>
+                <div class="testi-author">
+                    <div class="tav" aria-hidden="true">S</div>
+                    <div>
+                        <div class="taname">Suresh M.</div>
+                        <div class="taloc">Apex, NC — Former Competitive Cricketer</div>
                     </div>
                 </div>
-                <div class="challenge-item" data-reveal data-delay="2" role="listitem">
-                    <div class="challenge-num" aria-hidden="true">02</div>
-                    <div class="challenge-body">
-                        <h3>Neglected Local Grounds</h3>
-                        <p>Existing grounds in Apex and Cary receive minimal maintenance and investment — creating inconsistent surfaces that hinder skill development and pose injury risks.</p>
+            </blockquote>
+            <blockquote class="testi-card fade-up" data-delay="3">
+                <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p>"I'm not even a cricket fan — but seeing what two 8th graders are trying to build for their community? The passion, the vision, the mission? How could I not donate? $50 was an easy yes."</p>
+                <div class="testi-author">
+                    <div class="tav" aria-hidden="true">M</div>
+                    <div>
+                        <div class="taname">Maria T.</div>
+                        <div class="taloc">Apex, NC — Community Supporter</div>
                     </div>
                 </div>
-                <div class="challenge-item" data-reveal data-delay="3" role="listitem">
-                    <div class="challenge-num" aria-hidden="true">03</div>
-                    <div class="challenge-body">
-                        <h3>Financial Barriers to Infrastructure</h3>
-                        <p>Building professional cricket fields costs $10,000–$25,000+. Communities recognize the value but need philanthropic support to make these critical investments happen.</p>
-                    </div>
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     DONATION SECTION
+═══════════════════════════════════════════════════════ -->
+<section class="section sec-donate" id="donations">
+    <div class="container">
+
+        <div class="eyebrow eyebrow-gold fade-up" data-delay="0">This is where it happens</div>
+        <h2 class="sec-title sec-title-light fade-up" data-delay="1">
+            One donation.<br>One field.<br>
+            <em>Hundreds of futures.</em>
+        </h2>
+        <p class="donate-sub fade-up" data-delay="2">
+            100% of every dollar you donate goes directly to cricket infrastructure in Apex and Cary, NC. No overhead. No delay.
+        </p>
+
+        <!-- Progress -->
+        <div class="cp fade-up" data-delay="3">
+            <div class="cp-top">
+                <div class="cp-raised-wrap">
+                    <span class="cp-amount">$14,320</span>
+                    <span class="cp-of">raised of $25,000 goal</span>
+                </div>
+                <div class="cp-meta">
+                    <span>187 donors</span>
+                    <span class="cp-sep" aria-hidden="true">·</span>
+                    <span>43 days left</span>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ── OUR SOLUTION ───────────────────────────────────── -->
-    <section class="section" id="solution">
-        <div class="container">
-            <div class="eyebrow" data-reveal>What we do</div>
-            <h2 class="section-title" data-reveal data-delay="1">
-                Our three-pillar<br>approach
-            </h2>
-
-            <div class="solutions" role="list">
-                <article class="solution-card" data-reveal data-delay="1" role="listitem">
-                    <div class="solution-num" aria-hidden="true">1</div>
-                    <h3>Field Development</h3>
-                    <p>We work directly with Apex, Cary, and other North Carolina communities to fund and build professional-grade cricket fields from the ground up, using the highest construction standards.</p>
-                </article>
-                <article class="solution-card" data-reveal data-delay="2" role="listitem">
-                    <div class="solution-num" aria-hidden="true">2</div>
-                    <h3>Equipment &amp; Resources</h3>
-                    <p>We provide quality training equipment — batting mats, bowling machines, protective gear, and professional training materials — for youth cricket programs throughout the region.</p>
-                </article>
-                <article class="solution-card" data-reveal data-delay="3" role="listitem">
-                    <div class="solution-num" aria-hidden="true">3</div>
-                    <h3>Community Partnerships</h3>
-                    <p>We partner with local organizations, schools, and academies to create lasting cricket infrastructure that serves communities and develops young talent for decades to come.</p>
-                </article>
+            <div class="cp-track" role="progressbar" aria-valuemin="0" aria-valuemax="25000" aria-valuenow="14320" aria-label="57% of fundraising goal reached">
+                <div class="cp-fill" id="cpFill"></div>
+                <div class="cp-dot" aria-hidden="true"></div>
             </div>
+            <div class="cp-pct">57% funded — <strong>help us reach 100%</strong></div>
         </div>
-    </section>
 
-    <!-- ── DONATIONS / STRIPE ─────────────────────────────── -->
-    <section class="section section-tinted" id="donations">
-        <div class="container">
-            <div class="eyebrow" data-reveal>Make an impact</div>
-            <h2 class="section-title" data-reveal data-delay="1">
-                Support cricket in<br>your community
-            </h2>
-            <p class="section-sub" data-reveal data-delay="2">
-                100% of your donation goes directly to Apex and Cary cricket infrastructure and youth programs.
-            </p>
+        <!-- Widget -->
+        <div class="widget fade-up" data-delay="4">
 
-            <!-- Donation Widget -->
-            <div class="donation-widget" data-reveal data-delay="3" role="form" aria-label="Donation form">
-                <div class="donation-amounts" role="group" aria-label="Select donation amount">
-                    <button type="button" class="amt-btn" data-amount="2500" data-label="Cricket Balls &amp; Equipment" aria-pressed="false">
-                        <span class="amt-val">$25</span>
-                        <span class="amt-desc">Cricket Balls &amp; Equipment</span>
-                    </button>
-                    <button type="button" class="amt-btn" data-amount="5000" data-label="Training Starter Pack" aria-pressed="false">
-                        <span class="amt-val">$50</span>
-                        <span class="amt-desc">Training Starter Pack</span>
-                    </button>
-                    <button type="button" class="amt-btn is-active" data-amount="10000" data-label="Practice Mat &amp; Training Aids" aria-pressed="true">
-                        <span class="amt-val">$100</span>
-                        <span class="amt-desc">Practice Mat &amp; Training Aids</span>
-                    </button>
-                    <button type="button" class="amt-btn" data-amount="50000" data-label="Major Infrastructure Support" aria-pressed="false">
-                        <span class="amt-val">$500</span>
-                        <span class="amt-desc">Major Infrastructure Support</span>
-                    </button>
-                </div>
+            <div class="widget-title">Choose your impact:</div>
 
-                <div class="custom-row">
-                    <label class="custom-label" for="customAmount">Or enter a custom amount</label>
-                    <div class="custom-wrap">
-                        <span class="currency-sym" aria-hidden="true">$</span>
-                        <input
-                            type="number"
-                            id="customAmount"
-                            class="custom-input"
-                            placeholder="Enter amount"
-                            min="1"
-                            step="1"
-                            aria-label="Custom donation amount in dollars"
-                        />
-                    </div>
-                </div>
-
-                <div class="donation-summary" id="donationSummary" aria-live="polite">
-                    Donating <strong id="summaryAmt">$100</strong> → <span id="summaryLabel">Practice Mat &amp; Training Aids</span> for youth cricketers in Apex &amp; Cary, NC.
-                </div>
-
-                <button type="button" class="donate-btn" id="donateBtn" aria-label="Proceed to secure donation checkout">
-                    <span id="donateBtnText">Donate $100 &nbsp;→</span>
-                    <span id="donateBtnLoader" class="btn-loader" aria-hidden="true" hidden>
-                        <span class="spinner"></span> Processing…
-                    </span>
+            <div class="amts-grid" role="group" aria-label="Donation amount options">
+                <button type="button" class="amt" data-amount="2500" data-label="Cricket Balls &amp; Equipment" aria-pressed="false">
+                    <span class="amt-price">$25</span>
+                    <span class="amt-name">Cricket Balls &amp; Equipment</span>
+                    <span class="amt-desc">Equips 1 player for training</span>
                 </button>
+                <button type="button" class="amt" data-amount="5000" data-label="Training Starter Pack" aria-pressed="false">
+                    <span class="amt-price">$50</span>
+                    <span class="amt-name">Training Starter Pack</span>
+                    <span class="amt-desc">Funds a full practice session</span>
+                </button>
+                <button type="button" class="amt amt-active" data-amount="10000" data-label="Practice Mat &amp; Training Aids" aria-pressed="true">
+                    <span class="amt-badge">MOST POPULAR</span>
+                    <span class="amt-price">$100</span>
+                    <span class="amt-name">Practice Mat &amp; Aids</span>
+                    <span class="amt-desc">Supplies a full youth program</span>
+                </button>
+                <button type="button" class="amt amt-champion" data-amount="50000" data-label="Field Champion — Major Infrastructure" aria-pressed="false">
+                    <span class="amt-badge amt-badge-gold">⭐ CHAMPION</span>
+                    <span class="amt-price">$500</span>
+                    <span class="amt-name">Field Champion</span>
+                    <span class="amt-desc">Direct field construction contribution</span>
+                </button>
+            </div>
 
-                <p class="donation-lock" aria-label="Secure payment information">
-                    <span aria-hidden="true">🔒</span> Secure checkout via Stripe · All major cards accepted · No account required
-                </p>
-
-                <div id="donationError" class="donation-error" role="alert" aria-live="assertive" hidden>
-                    Something went wrong. Please try again or contact us directly.
+            <div class="custom-row">
+                <label for="customAmt" class="custom-lbl">Or enter a custom amount:</label>
+                <div class="custom-wrap">
+                    <span class="custom-dollar" aria-hidden="true">$</span>
+                    <input type="number" id="customAmt" class="custom-input" placeholder="Your amount" min="1" step="1" aria-label="Custom donation amount in dollars">
                 </div>
             </div>
 
-            <!-- Impact Breakdown -->
-            <div class="impact-grid" role="list" aria-label="Donation impact breakdown">
-                <article class="impact-card" data-reveal data-delay="1" role="listitem">
-                    <div class="impact-amt">$25</div>
-                    <div class="impact-text">Provides cricket balls &amp; essential training materials for Apex &amp; Cary youth</div>
-                </article>
-                <article class="impact-card" data-reveal data-delay="2" role="listitem">
-                    <div class="impact-amt">$50</div>
-                    <div class="impact-text">Funds basic training aids and practice materials for a local youth program</div>
-                </article>
-                <article class="impact-card" data-reveal data-delay="3" role="listitem">
-                    <div class="impact-amt">$100</div>
-                    <div class="impact-text">Provides portable practice surfaces and professional-grade training tools</div>
-                </article>
-                <article class="impact-card" data-reveal data-delay="4" role="listitem">
-                    <div class="impact-amt">$500+</div>
-                    <div class="impact-text">Makes a significant direct contribution toward field construction and development</div>
-                </article>
+            <div class="impact-box" id="impactBox" aria-live="polite">
+                <span class="ib-icon" aria-hidden="true">💚</span>
+                <span>Your <strong id="ibAmt">$100</strong> donation funds <strong id="ibLabel">Practice Mat &amp; Training Aids</strong> for youth cricketers in Apex &amp; Cary, NC. Thank you.</span>
+            </div>
+
+            <button type="button" class="donate-btn" id="donateBtn">
+                <span id="dBtnText">🔒&nbsp; Donate $100 Securely</span>
+                <span id="dBtnLoader" hidden class="btn-loader"><span class="spin" aria-hidden="true"></span>Processing…</span>
+            </button>
+
+            <div class="trust-strip" aria-label="Security and payment information">
+                <span>🔐 SSL encrypted</span>
+                <span>💳 All cards accepted</span>
+                <span>⚡ Powered by Stripe</span>
+                <span>✅ No account needed</span>
+            </div>
+
+            <div id="donationError" class="donate-error" role="alert" aria-live="assertive" hidden>
+                Payment couldn't be started. Please refresh and try again.
             </div>
         </div>
-    </section>
 
-    <!-- ── COMMUNITIES ────────────────────────────────────── -->
-    <section class="section" id="communities">
-        <div class="container">
-            <div class="eyebrow" data-reveal>Where we work</div>
-            <h2 class="section-title" data-reveal data-delay="1">
-                Starting in<br>Apex &amp; Cary
-            </h2>
-            <p class="section-sub" data-reveal data-delay="2">
-                Two communities with remarkable young talent and a real, urgent need for world-class cricket facilities.
-            </p>
+        <!-- Build callouts -->
+        <div class="build-grid">
+            <div class="build-card fade-up" data-delay="1">
+                <div class="build-price">$25</div>
+                <div class="build-desc">Provides 6 professional practice cricket balls — the most essential tool for any young player</div>
+            </div>
+            <div class="build-card fade-up" data-delay="2">
+                <div class="build-price">$100</div>
+                <div class="build-desc">Funds a portable batting mat — allows year-round skill building regardless of ground conditions</div>
+            </div>
+            <div class="build-card fade-up" data-delay="3">
+                <div class="build-price">$500</div>
+                <div class="build-desc">A direct contribution to field construction — your name on the foundation, literally</div>
+            </div>
+            <div class="build-card fade-up" data-delay="4">
+                <div class="build-price">$1,000+</div>
+                <div class="build-desc">Transformational impact — covers a major section of professional pitch preparation for Apex youth</div>
+            </div>
+        </div>
 
-            <div class="communities-grid" role="list">
-                <article class="community-card" data-reveal data-delay="1" role="listitem">
-                    <div class="community-top">
-                        <div class="community-badge" aria-hidden="true">NC</div>
+    </div>
+</section>
+
+<!-- ── COMMUNITIES ─────────────────────────────────────── -->
+<section class="section sec-cream" id="communities">
+    <div class="container">
+        <div class="eyebrow fade-up" data-delay="0">Where your money goes</div>
+        <h2 class="sec-title fade-up" data-delay="1">Starting in Apex &amp; Cary — growing across NC</h2>
+
+        <div class="comm-grid">
+            <div class="comm-card fade-up" data-delay="1">
+                <div class="comm-head">
+                    <div class="comm-badge" aria-hidden="true">NC</div>
+                    <div>
                         <h3>Apex</h3>
+                        <div class="comm-sub">Home of our founders</div>
                     </div>
-                    <p>Supporting youth cricket development and infrastructure in Apex, NC. Your donations help build professional cricket fields and invest in the next generation of local cricketers across the Triangle area.</p>
-                    <div class="community-tag">Growing cricket community</div>
-                </article>
-                <article class="community-card" data-reveal data-delay="2" role="listitem">
-                    <div class="community-top">
-                        <div class="community-badge" aria-hidden="true">NC</div>
-                        <h3>Cary</h3>
-                    </div>
-                    <p>Supporting youth cricket development and infrastructure in Cary, NC. Your donations help build professional cricket fields and provide resources for young cricketers throughout the Triangle.</p>
-                    <div class="community-tag">Triangle's cricket hub</div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── FINAL CTA ──────────────────────────────────────── -->
-    <section class="section cta-section" id="cta">
-        <div class="cta-mesh" aria-hidden="true">
-            <div class="cta-orb cta-orb-1"></div>
-            <div class="cta-orb cta-orb-2"></div>
-        </div>
-        <div class="container">
-            <div class="cta-inner" data-reveal>
-                <div class="eyebrow eyebrow-light">Ready to help?</div>
-                <h2 class="section-title section-title-light">
-                    Be part of building<br>something lasting
-                </h2>
-                <p class="cta-body">
-                    Every dollar you give goes directly to building cricket fields and providing equipment for young athletes in Apex and Cary, North Carolina. No overhead. No delay.
-                </p>
-                <a href="#donations" class="btn btn-light" aria-label="Navigate to donation section">Make a Donation</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── FOOTER ─────────────────────────────────────────── -->
-    <footer class="footer" role="contentinfo">
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <div class="footer-logo" aria-label="Youth Wicket Foundation">
-                    <span aria-hidden="true">🏏</span> Youth Wicket Foundation
                 </div>
-                <p>Building cricket infrastructure for North Carolina's youth athletes in Apex and Cary.</p>
-                <p class="footer-founders">Founded by Arnav Chouksey &amp; Yashesh Shanishchara · Core Cricket Academy</p>
+                <p>Apex has a rapidly growing cricket community and young athletes with real competitive potential. Your donations directly fund field development — giving these players the facility their talent demands.</p>
+                <div class="comm-stat"><span class="comm-n">~100</span> youth cricketers in the area</div>
             </div>
-            <nav class="footer-nav" aria-label="Footer navigation">
-                <a href="#about">About</a>
-                <a href="#mission">Mission</a>
-                <a href="#why">Impact</a>
-                <a href="#donations">Donate</a>
-                <a href="#communities">Communities</a>
-            </nav>
-        </div>
-        <div class="footer-bar">
-            <div class="container">
-                <span>© 2025 Youth Wicket Foundation · Apex, NC</span>
-                <span>All donations support cricket infrastructure in Apex &amp; Cary, NC</span>
+            <div class="comm-card fade-up" data-delay="2">
+                <div class="comm-head">
+                    <div class="comm-badge comm-badge-b" aria-hidden="true">NC</div>
+                    <div>
+                        <h3>Cary</h3>
+                        <div class="comm-sub">Triangle's emerging hub</div>
+                    </div>
+                </div>
+                <p>Cary has an enormous South Asian community with deep cricket roots and enormous demand for quality facilities. Your donation makes the Triangle a real cricket destination for the next generation.</p>
+                <div class="comm-stat"><span class="comm-n">~100+</span> youth cricketers in the area</div>
             </div>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="future-box fade-up" data-delay="3">
+            <span class="fb-icon" aria-hidden="true">🚀</span>
+            <span><strong>Next: Greensboro, Durham, Raleigh and beyond.</strong> Our vision is a North Carolina where every aspiring young cricketer has access to a professional field — not just the lucky ones.</span>
+        </div>
+    </div>
+</section>
+
+<!-- ── FINAL CTA ────────────────────────────────────────── -->
+<section class="section cta-section" id="cta">
+    <canvas id="ctaCanvas" class="cta-canvas" aria-hidden="true"></canvas>
+    <div class="cta-orbs" aria-hidden="true">
+        <div class="corb c1"></div><div class="corb c2"></div><div class="corb c3"></div>
+    </div>
+    <div class="container cta-inner">
+        <div class="eyebrow eyebrow-gold fade-up" data-delay="0">The time is now</div>
+        <h2 class="cta-h2 fade-up" data-delay="1">
+            A child in Apex is practicing<br>
+            on a broken field <em>right now.</em>
+        </h2>
+        <p class="cta-p fade-up" data-delay="2">
+            While you read this, a young cricketer in Apex or Cary is trying to build a future on a surface that was never meant for them. Your donation is the only thing standing between them and the facility they deserve.
+        </p>
+        <div class="cta-actions fade-up" data-delay="3">
+            <a href="#donations" class="btn btn-gold btn-xl">Make a Donation Now &nbsp;→</a>
+            <div class="cta-note">100% to cricket fields · Secured by Stripe · No overhead</div>
+        </div>
+    </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────── -->
+<footer class="footer">
+    <div class="container foot-inner">
+        <div class="foot-brand">
+            <div class="foot-logo">🏏 Youth Wicket Foundation</div>
+            <p>Building cricket infrastructure for North Carolina's youth athletes in Apex and Cary. Founded by competitive cricketers for the next generation of champions.</p>
+            <p class="foot-founders">Arnav Chouksey &amp; Yashesh Shanishchara · Core Cricket Academy · Apex, NC</p>
+        </div>
+        <nav class="foot-nav" aria-label="Footer navigation">
+            <a href="#about">About</a>
+            <a href="#story">Our Story</a>
+            <a href="#why">Impact</a>
+            <a href="#donations">Donate</a>
+            <a href="#communities">Communities</a>
+        </nav>
+    </div>
+    <div class="foot-bar">
+        <div class="container foot-bar-inner">
+            <span>© 2025 Youth Wicket Foundation · Apex, NC</span>
+            <span>All donations fund cricket infrastructure in Apex &amp; Cary, NC</span>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
