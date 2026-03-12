@@ -107,13 +107,30 @@ function updateFloat() {
 }
 
 /* ─────────────────────────────────────────────────────
-   PARALLAX — hero orbs follow scroll
-   Each orb has data-parallax-speed; we offset translateY
+   PARALLAX — field illustration + player silhouettes follow scroll
+   
+   WHY NOT THE ORBS: orbs run CSS @keyframes that use transform.
+   Setting el.style.transform via JS would override the keyframe
+   animation entirely, breaking the orb motion. Instead we apply
+   parallax to the .hero-field-wrap and .hero-players elements,
+   which have NO competing CSS animations — so JS transform is safe.
+   
+   Result: 3 layers moving at different speeds as you scroll down:
+     • Orbs (CSS animation, no JS): fastest apparent motion
+     • Player silhouettes (speed 0.05): medium drift  
+     • Field illustration (speed 0.12): slowest, deepest layer
+   This creates genuine multi-plane parallax depth.
 ───────────────────────────────────────────────────── */
 function updateParallax() {
     const scrollY = window.scrollY;
+    // Only apply within the hero section (approx first 100vh)
+    const heroH = window.innerHeight;
+    if (scrollY > heroH * 1.5) return; // stop computing once hero is gone
+
     qsa('[data-parallax-speed]').forEach(el => {
-        const speed = parseFloat(el.dataset.parallaxSpeed || 0.05);
+        const speed = parseFloat(el.dataset.parallaxSpeed || 0.08);
+        // translateY pushes element DOWN as user scrolls down,
+        // creating the illusion the background is moving slower
         el.style.transform = `translateY(${scrollY * speed}px)`;
     });
 }
