@@ -170,84 +170,90 @@
     <!-- Particle canvas -->
     <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
 
-    <!-- Animated mesh orbs (JS parallax target) -->
+    <!-- Animated mesh orbs — CSS keyframes only, no JS transform conflict -->
     <div class="hero-orbs" aria-hidden="true" id="heroOrbs">
-        <div class="orb o1" data-parallax-speed="0.04"></div>
-        <div class="orb o2" data-parallax-speed="0.06"></div>
-        <div class="orb o3" data-parallax-speed="0.03"></div>
-        <div class="orb o4" data-parallax-speed="0.05"></div>
+        <div class="orb o1"></div>
+        <div class="orb o2"></div>
+        <div class="orb o3"></div>
+        <div class="orb o4"></div>
     </div>
 
     <!-- Subtle grid -->
     <div class="hero-grid" aria-hidden="true"></div>
 
-    <!-- SVG Cricket Field Illustration (aerial view, background layer) -->
-    <div class="hero-field-wrap" aria-hidden="true">
+    <!-- SVG Cricket Field Illustration — parallax layer (JS moves this on scroll) -->
+    <div class="hero-field-wrap" id="heroFieldWrap" aria-hidden="true" data-parallax-speed="0.12">
         <svg class="hero-field-svg" viewBox="0 0 700 700" preserveAspectRatio="xMidYMid meet">
-            <!-- Outer boundary -->
-            <ellipse cx="350" cy="350" rx="320" ry="280" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="2"/>
-            <!-- Inner circle -->
-            <ellipse cx="350" cy="350" rx="200" ry="175" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1.5"/>
-            <!-- 30-yard circle -->
-            <ellipse cx="350" cy="350" rx="120" ry="105" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="8,6"/>
-            <!-- Pitch rectangle -->
-            <rect x="326" y="245" width="48" height="210" rx="4" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
-            <!-- Crease lines -->
-            <line x1="320" y1="288" x2="380" y2="288" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
-            <line x1="320" y1="412" x2="380" y2="412" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
-            <!-- Wickets top -->
-            <rect x="341" y="254" width="4" height="18" rx="2" fill="rgba(255,255,255,0.25)"/>
-            <rect x="348" y="254" width="4" height="18" rx="2" fill="rgba(255,255,255,0.25)"/>
-            <rect x="355" y="254" width="4" height="18" rx="2" fill="rgba(255,255,255,0.25)"/>
+            <!-- Grass fill — the oval reads immediately as a cricket ground -->
+            <ellipse cx="350" cy="350" rx="320" ry="280" fill="rgba(6,78,28,0.18)"/>
+            <!-- Inner circle — slightly lighter grass band -->
+            <ellipse cx="350" cy="350" rx="200" ry="175" fill="rgba(6,95,46,0.10)"/>
+            <!-- Pitch rectangle — sandy/ochre colour -->
+            <rect x="326" y="245" width="48" height="210" rx="4" fill="rgba(194,124,14,0.14)" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+            <!-- Outer boundary line -->
+            <ellipse cx="350" cy="350" rx="320" ry="280" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="2.5"/>
+            <!-- Inner circle line -->
+            <ellipse cx="350" cy="350" rx="200" ry="175" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1.5"/>
+            <!-- 30-yard circle dashed -->
+            <ellipse cx="350" cy="350" rx="120" ry="105" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="8,6"/>
+            <!-- Crease lines — bright white, clearly readable -->
+            <line x1="316" y1="288" x2="384" y2="288" stroke="rgba(255,255,255,0.35)" stroke-width="2.5"/>
+            <line x1="316" y1="412" x2="384" y2="412" stroke="rgba(255,255,255,0.35)" stroke-width="2.5"/>
+            <!-- Popping crease -->
+            <line x1="316" y1="278" x2="384" y2="278" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+            <line x1="316" y1="422" x2="384" y2="422" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+            <!-- Wickets top — gold tint for visibility -->
+            <rect x="341" y="250" width="5" height="22" rx="2" fill="rgba(251,191,36,0.55)"/>
+            <rect x="348.5" y="250" width="5" height="22" rx="2" fill="rgba(251,191,36,0.55)"/>
+            <rect x="356" y="250" width="5" height="22" rx="2" fill="rgba(251,191,36,0.55)"/>
+            <!-- Bails -->
+            <rect x="339" y="248" width="12" height="3" rx="1" fill="rgba(251,191,36,0.40)"/>
             <!-- Wickets bottom -->
-            <rect x="341" y="428" width="4" height="18" rx="2" fill="rgba(255,255,255,0.25)"/>
-            <rect x="348" y="428" width="4" height="18" rx="2" fill="rgba(255,255,255,0.25)"/>
-            <rect x="355" y="428" width="4" height="18" rx="2" fill="rgba(255,255,255,0.25)"/>
-            <!-- Fielder positions (dots) -->
-            <circle cx="350" cy="180" r="4" fill="rgba(255,255,255,0.12)"/>
-            <circle cx="220" cy="260" r="4" fill="rgba(255,255,255,0.12)"/>
-            <circle cx="480" cy="260" r="4" fill="rgba(255,255,255,0.12)"/>
-            <circle cx="180" cy="350" r="4" fill="rgba(255,255,255,0.12)"/>
-            <circle cx="520" cy="350" r="4" fill="rgba(255,255,255,0.12)"/>
-            <circle cx="220" cy="440" r="4" fill="rgba(255,255,255,0.12)"/>
-            <circle cx="480" cy="440" r="4" fill="rgba(255,255,255,0.12)"/>
-            <circle cx="350" cy="520" r="4" fill="rgba(255,255,255,0.12)"/>
-            <circle cx="280" cy="220" r="4" fill="rgba(255,255,255,0.10)"/>
-            <circle cx="420" cy="220" r="4" fill="rgba(255,255,255,0.10)"/>
-            <circle cx="280" cy="480" r="4" fill="rgba(255,255,255,0.10)"/>
-            <circle cx="420" cy="480" r="4" fill="rgba(255,255,255,0.10)"/>
+            <rect x="341" y="428" width="5" height="22" rx="2" fill="rgba(251,191,36,0.55)"/>
+            <rect x="348.5" y="428" width="5" height="22" rx="2" fill="rgba(251,191,36,0.55)"/>
+            <rect x="356" y="428" width="5" height="22" rx="2" fill="rgba(251,191,36,0.55)"/>
+            <rect x="339" y="449" width="12" height="3" rx="1" fill="rgba(251,191,36,0.40)"/>
+            <!-- Fielder positions -->
+            <circle cx="350" cy="178" r="5" fill="rgba(255,255,255,0.18)"/>
+            <circle cx="218" cy="256" r="5" fill="rgba(255,255,255,0.18)"/>
+            <circle cx="482" cy="256" r="5" fill="rgba(255,255,255,0.18)"/>
+            <circle cx="178" cy="350" r="5" fill="rgba(255,255,255,0.18)"/>
+            <circle cx="522" cy="350" r="5" fill="rgba(255,255,255,0.18)"/>
+            <circle cx="218" cy="444" r="5" fill="rgba(255,255,255,0.18)"/>
+            <circle cx="482" cy="444" r="5" fill="rgba(255,255,255,0.18)"/>
+            <circle cx="350" cy="522" r="5" fill="rgba(255,255,255,0.18)"/>
+            <circle cx="278" cy="218" r="4" fill="rgba(255,255,255,0.12)"/>
+            <circle cx="422" cy="218" r="4" fill="rgba(255,255,255,0.12)"/>
+            <circle cx="278" cy="482" r="4" fill="rgba(255,255,255,0.12)"/>
+            <circle cx="422" cy="482" r="4" fill="rgba(255,255,255,0.12)"/>
+            <!-- Sight screen markers -->
+            <rect x="330" y="130" width="40" height="22" rx="3" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <rect x="330" y="548" width="40" height="22" rx="3" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
         </svg>
     </div>
 
-    <!-- Player silhouettes -->
-    <div class="hero-players" aria-hidden="true">
+    <!-- Player silhouettes — second parallax layer (slower than field) -->
+    <div class="hero-players" aria-hidden="true" id="heroPlayers" data-parallax-speed="0.05">
         <!-- Batsman silhouette (left) -->
         <svg class="player-sil player-bat" viewBox="0 0 60 120" preserveAspectRatio="xMidYMax meet">
-            <!-- head -->
-            <circle cx="30" cy="10" r="8" fill="rgba(255,255,255,0.12)"/>
-            <!-- helmet brim -->
-            <rect x="20" y="14" width="22" height="4" rx="2" fill="rgba(255,255,255,0.10)"/>
-            <!-- body -->
-            <path d="M22 18 L38 18 L40 55 L36 55 L35 80 L25 80 L24 55 L20 55 Z" fill="rgba(255,255,255,0.10)"/>
-            <!-- bat arm -->
-            <path d="M38 22 L56 60 L52 62 L34 26 Z" fill="rgba(255,255,255,0.10)"/>
-            <!-- bat blade -->
-            <rect x="50" y="56" width="8" height="30" rx="3" fill="rgba(255,255,255,0.12)" transform="rotate(15 54 71)"/>
-            <!-- legs -->
-            <rect x="22" y="80" width="7" height="35" rx="3" fill="rgba(255,255,255,0.10)" transform="rotate(-5 25.5 97.5)"/>
-            <rect x="31" y="80" width="7" height="35" rx="3" fill="rgba(255,255,255,0.10)" transform="rotate(5 34.5 97.5)"/>
+            <circle cx="30" cy="10" r="8" fill="rgba(255,255,255,0.22)"/>
+            <rect x="20" y="14" width="22" height="4" rx="2" fill="rgba(255,255,255,0.18)"/>
+            <path d="M22 18 L38 18 L40 55 L36 55 L35 80 L25 80 L24 55 L20 55 Z" fill="rgba(255,255,255,0.18)"/>
+            <path d="M38 22 L56 60 L52 62 L34 26 Z" fill="rgba(255,255,255,0.18)"/>
+            <rect x="50" y="56" width="8" height="30" rx="3" fill="rgba(251,191,36,0.35)" transform="rotate(15 54 71)"/>
+            <rect x="22" y="80" width="7" height="35" rx="3" fill="rgba(255,255,255,0.18)" transform="rotate(-5 25.5 97.5)"/>
+            <rect x="31" y="80" width="7" height="35" rx="3" fill="rgba(255,255,255,0.18)" transform="rotate(5 34.5 97.5)"/>
         </svg>
         <!-- Bowler silhouette (right) -->
         <svg class="player-sil player-bowl" viewBox="0 0 60 120" preserveAspectRatio="xMidYMax meet">
-            <circle cx="30" cy="10" r="8" fill="rgba(255,255,255,0.10)"/>
-            <circle cx="30" cy="14" r="9" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="3"/>
-            <path d="M22 18 L38 18 L40 52 L36 52 L35 78 L25 78 L24 52 L20 52 Z" fill="rgba(255,255,255,0.08)"/>
-            <!-- bowling arm raised -->
-            <path d="M38 20 L55 8 L57 12 L40 26 Z" fill="rgba(255,255,255,0.09)"/>
-            <circle cx="57" cy="8" r="4" fill="rgba(220,38,38,0.25)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-            <!-- legs in stride -->
-            <rect x="22" y="78" width="7" height="36" rx="3" fill="rgba(255,255,255,0.08)" transform="rotate(12 25.5 96)"/>
-            <rect x="31" y="78" width="7" height="36" rx="3" fill="rgba(255,255,255,0.08)" transform="rotate(-15 34.5 96)"/>
+            <circle cx="30" cy="10" r="8" fill="rgba(255,255,255,0.20)"/>
+            <circle cx="30" cy="14" r="9" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="3"/>
+            <path d="M22 18 L38 18 L40 52 L36 52 L35 78 L25 78 L24 52 L20 52 Z" fill="rgba(255,255,255,0.18)"/>
+            <path d="M38 20 L55 8 L57 12 L40 26 Z" fill="rgba(255,255,255,0.18)"/>
+            <circle cx="57" cy="8" r="5" fill="rgba(220,38,38,0.55)" stroke="rgba(255,255,255,0.30)" stroke-width="1.5"/>
+            <rect x="22" y="78" width="7" height="36" rx="3" fill="rgba(255,255,255,0.18)" transform="rotate(12 25.5 96)"/>
+            <rect x="31" y="78" width="7" height="36" rx="3" fill="rgba(255,255,255,0.18)" transform="rotate(-15 34.5 96)"/>
+        </svg>
         </svg>
     </div>
 
